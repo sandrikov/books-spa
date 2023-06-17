@@ -1,0 +1,40 @@
+
+application {
+  config {
+    baseName books,
+    applicationType monolith,
+    packageName ru.otus.homework.books,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework react
+  }
+  entities *
+}
+
+entity Book {
+  title String required
+}
+
+entity Author {
+    name String required unique
+}
+
+entity Genre {
+    name String required unique
+}
+
+entity Comment {
+    text String required
+}
+
+relationship OneToMany {
+  Author to Book{author}
+}
+
+relationship OneToMany {
+  Genre to Book{genre}
+}
+
+relationship OneToMany {
+  Book to Comment{book}
+}
