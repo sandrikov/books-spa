@@ -1,0 +1,46 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Book {
+  id Long,
+  title String,
+  author Author,
+  genre Genre,  
+}
+
+entity Author {
+	id Long,
+    name String
+}
+
+entity Genre {
+	id Long,
+    name String
+}
+
+entity Comment {
+	id Long,
+    name String
+}
+
+relationship OneToMany {
+  Author to Book{author}
+}
+
+relationship OneToMany {
+  Genre to Book{genre}
+}
+
+relationship OneToMany {
+  Book to Comment{book}
+}
