@@ -1,0 +1,21 @@
+{
+  "applications": ["books"],
+  "changelogDate": "20230618105546",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "author",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Author",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}
